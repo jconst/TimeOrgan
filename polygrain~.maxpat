@@ -93,6 +93,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-22",
@@ -223,9 +224,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 172.0, 174.955566, 101.0, 22.0 ],
+									"patching_rect" : [ 172.0, 174.955566, 94.0, 22.0 ],
 									"style" : "",
-									"text" : "1. 0. 0.4 $1 1. $1"
+									"text" : "1. 0. 0. $1 1. $1"
 								}
 
 							}
@@ -926,14 +927,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-12",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 104.0, 232.455566, 40.0, 89.0 ],
+					"patching_rect" : [ 104.0, 232.455566, 40.0, 76.0 ],
 					"style" : "",
-					"text" : "84825. 0 85573. 85573."
+					"text" : "171619. 0 171919. 300."
 				}
 
 			}
