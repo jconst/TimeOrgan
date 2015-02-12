@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 636.0, 236.0, 640.0, 480.0 ],
+		"rect" : [ 349.0, 265.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,14 +38,27 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 339.0, 276.0, 65.0, 22.0 ],
+					"style" : "",
+					"text" : "allnotesoff"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 90.0, 217.0, 36.0, 22.0 ],
+					"patching_rect" : [ 90.0, 217.0, 42.0, 22.0 ],
 					"style" : "",
-					"text" : "*~ 5."
+					"text" : "*~ 10."
 				}
 
 			}
@@ -69,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 90.0, 180.0, 107.0, 22.0 ],
+					"patching_rect" : [ 90.0, 179.0, 107.0, 22.0 ],
 					"style" : "",
 					"text" : "poly~ pitchshift 10"
 				}
@@ -503,6 +516,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
