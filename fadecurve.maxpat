@@ -80,7 +80,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-46",
@@ -162,6 +161,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -313,7 +313,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 362.5, 406.0, 84.0, 22.0 ],
+					"patching_rect" : [ 362.5, 406.0, 98.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -386,7 +386,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 163.0, 61.0, 29.5, 22.0 ],
+					"patching_rect" : [ 163.0, 61.0, 35.5, 22.0 ],
 					"style" : "",
 					"text" : "#2"
 				}
@@ -673,9 +673,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 483.0, 245.955566, 74.0, 22.0 ],
+					"patching_rect" : [ 483.0, 245.955566, 77.0, 22.0 ],
 					"style" : "",
-					"text" : "1, 0 $1 1 $1"
+					"text" : "1, 0. $1 1 $1"
 				}
 
 			}

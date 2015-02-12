@@ -43,10 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 291.703003, 401.0, 42.0, 26.0 ],
-					"presentation_rect" : [ 291.0, 401.0, 0.0, 0.0 ],
+					"patching_rect" : [ 291.703003, 401.0, 49.0, 26.0 ],
 					"style" : "",
-					"text" : "*~ 0.2"
+					"text" : "*~ 0.05"
 				}
 
 			}
@@ -57,9 +56,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 201.0, 401.0, 42.0, 26.0 ],
+					"patching_rect" : [ 201.0, 401.0, 49.0, 26.0 ],
 					"style" : "",
-					"text" : "*~ 0.2"
+					"text" : "*~ 0.05"
 				}
 
 			}
@@ -587,7 +586,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 69.0, 238.455566, 141.0, 22.0 ],
 					"style" : "",
-					"text" : "108893. 0 109676. 783."
+					"text" : "97167. 0 98005. 838."
 				}
 
 			}
