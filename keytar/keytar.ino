@@ -16,7 +16,7 @@ Button buttons[btnCount] = {
 };
 
 void didPressButton(Button btn) {
-	Serial.print("b");
+	Serial.print("b ");
 	Serial.print(btn.id);
 	Serial.print(" ");
 	Serial.println((int)btn.isPressed());
@@ -32,7 +32,6 @@ void setup()
 
 void loop()
 {
-	delay(100);
 	for (int i=0; i<btnCount; ++i) {
 		buttons[i].updateState();
 	}

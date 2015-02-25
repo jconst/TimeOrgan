@@ -1,4 +1,5 @@
-#define DEBOUNCE_TIME 1
+#define DEBOUNCE_TIME 5
+#define SHOULD_DEBOUNCE true
 
 class Button
 {
@@ -19,6 +20,7 @@ public:
 private:
     void setState(btnState newState);
     void (*changeCallback)(Button btn);
+    bool shouldNotify(btnState oldState, btnState newState);
     unsigned long debounceStart;
 };
 
@@ -33,7 +35,7 @@ void Button::updateState()
             break;
         case OFF:
             if (reading) {
-                setState(ON);
+                setState(SHOULD_DEBOUNCE ? DEBOUNCE : ON);
             }
             break;
         case DEBOUNCE:
@@ -48,10 +50,11 @@ void Button::updateState()
 
 void Button::setState(btnState newState)
 {
+    btnState oldState = state;
     state = newState;
     if (newState == DEBOUNCE) {
         debounceStart = millis();
-    } else {
+    } else if (shouldNotify(oldState, newState)) {
         changeCallback(*this);
     }
 }
@@ -59,4 +62,10 @@ void Button::setState(btnState newState)
 bool Button::isPressed()
 {
     return state == ON;
+}
+
+bool Button::shouldNotify(btnState oldState, btnState newState)
+{
+    return (newState == OFF && oldState == ON) ||
+           (newState == ON && oldState != ON);
 }

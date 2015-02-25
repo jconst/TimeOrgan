@@ -1,0 +1,33 @@
+{
+	"pattrstorage" : 	{
+		"name" : "button-presets",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"granvolution::tailfx[1]::compress::komp-regular::kompattr" : [ -1 ],
+					"granvolution::tailfx::compress::komp-regular::kompattr" : [ -1 ],
+					"granvolution::graindist" : [ 713 ],
+					"grainfinder::grainstart" : [ 0.041016 ],
+					"grainfinder::grainsize" : [ 618 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"granvolution::tailfx[1]::compress::komp-regular::kompattr" : [ -1 ],
+					"granvolution::tailfx::compress::komp-regular::kompattr" : [ -1 ],
+					"granvolution::graindist" : [ 439 ],
+					"grainfinder::grainstart" : [ 0.235672 ],
+					"grainfinder::grainsize" : [ 307 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
