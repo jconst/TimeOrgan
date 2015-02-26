@@ -68,9 +68,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 21.5, 323.0, 127.0, 22.0 ],
+					"patching_rect" : [ 21.5, 323.0, 121.0, 22.0 ],
 					"style" : "",
-					"text" : "buffer~ loopbuf 10000"
+					"text" : "buffer~ loopbuf 5000"
 				}
 
 			}
@@ -147,7 +147,7 @@
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 70.0, 267.0, 191.0, 22.0 ],
 					"style" : "",
-					"text" : "stutter~ 960000 960000 1 960000"
+					"text" : "stutter~ 480000 480000 1 480000"
 				}
 
 			}
