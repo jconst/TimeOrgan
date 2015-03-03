@@ -107,7 +107,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 319.0, 156.0, 117.0, 22.0 ],
+					"patching_rect" : [ 319.0, 155.0, 117.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0
 					}
