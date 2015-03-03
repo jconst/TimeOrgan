@@ -42,9 +42,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 156.0, 250.0, 67.0, 22.0 ],
+					"patching_rect" : [ 156.0, 250.0, 60.0, 22.0 ],
 					"style" : "",
-					"text" : "s bufname"
+					"text" : "s bufnum"
 				}
 
 			}
@@ -68,9 +68,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 156.0, 217.0, 54.0, 22.0 ],
+					"patching_rect" : [ 156.0, 217.0, 29.5, 22.0 ],
 					"style" : "",
-					"text" : "thegrain"
+					"text" : "0"
 				}
 
 			}
