@@ -2,6 +2,8 @@
 
 #include "Button.h"
 
+const int softPot1 = 2;
+
 const int btnCount = 9;
 Button buttons[btnCount] = {
 	Button(0, 5),
@@ -30,9 +32,18 @@ void setup()
 	}
 }
 
+void writePot(int num, int value)
+{
+	Serial.print("p");
+	Serial.print(num);
+	Serial.print(" ");
+	Serial.println(value);
+}
+
 void loop()
 {
 	for (int i=0; i<btnCount; ++i) {
 		buttons[i].updateState();
 	}
+	writePot(1, analogRead(softPot1));
 }
