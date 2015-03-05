@@ -46,4 +46,6 @@ void loop()
 		buttons[i].updateState();
 	}
 	writePot(0, analogRead(softPot1));
+	//REMOVE LATER:
+	delay(1);
 }

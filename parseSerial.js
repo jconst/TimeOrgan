@@ -20,7 +20,9 @@ function p() //(soft)pot
 {
 	var args = arrayfromargs(arguments)
 	var potNum = args[0]
-	var value = args[1] / 1024.0
+	var valStr = args.slice(1,args.length).join("")
+	post(valStr)
+	var value = Number(valStr) / 1024.0
 
 	outlet(3 + potNum, value)
 }
