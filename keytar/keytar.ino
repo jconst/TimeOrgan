@@ -34,7 +34,7 @@ void setup()
 
 void writePot(int num, int value)
 {
-	Serial.print("p");
+	Serial.print("p ");
 	Serial.print(num);
 	Serial.print(" ");
 	Serial.println(value);
@@ -45,5 +45,5 @@ void loop()
 	for (int i=0; i<btnCount; ++i) {
 		buttons[i].updateState();
 	}
-	writePot(1, analogRead(softPot1));
+	writePot(0, analogRead(softPot1));
 }

@@ -1,5 +1,5 @@
 autowatch = 1
-outlets = 3
+outlets = 5
 
 function b() //button
 {
@@ -16,11 +16,21 @@ function b() //button
 	}
 }
 
+function p() //(soft)pot
+{
+	var args = arrayfromargs(arguments)
+	var potNum = args[0]
+	var value = args[1] / 1024.0
+
+	outlet(3 + potNum, value)
+}
+
 function outletComments(num)
 {
 	assist(num == 0 ? "freeze button"
          : num == 1 ? "store button"
-         : "preset recall buttons")
+         : num == 2 ? "preset recall buttons"
+         : ("softpot " + (num-3) + " value"))
 }
 
 setoutletassist(-1, outletComments)
