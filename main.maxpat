@@ -183,7 +183,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 21.0, 120.0, 266.0, 254.5 ],
+					"patching_rect" : [ 21.0, 120.0, 267.0, 231.5 ],
 					"varname" : "granvolution",
 					"viewvisibility" : 1
 				}
@@ -291,7 +291,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.5, 393.0, 55.0, 55.0 ],
+					"patching_rect" : [ 120.5, 369.0, 55.0, 55.0 ],
 					"prototypename" : "helpfile",
 					"style" : ""
 				}
@@ -434,13 +434,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "vocode.maxpat",
-				"bootpath" : "~/Code/Patp1",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "tailfx.maxpat",
 				"bootpath" : "~/Code/Patp1",
 				"patcherrelativepath" : ".",
@@ -494,13 +487,6 @@
 				"bootpath" : "~/Code/Patp1",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "octaver.maxpat",
-				"bootpath" : "~/Code/Patp1",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
