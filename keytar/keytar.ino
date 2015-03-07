@@ -2,7 +2,7 @@
 
 #include "Button.h"
 
-const int softPot1 = 2;
+const int softPot1 = 0;
 
 const int btnCount = 9;
 Button buttons[btnCount] = {
@@ -17,11 +17,16 @@ Button buttons[btnCount] = {
 	Button(8, 13)
 };
 
+bool sendPot[2] = {false, false};
+
 void didPressButton(Button btn) {
-	Serial.print("b ");
-	Serial.print(btn.id);
-	Serial.print(" ");
-	Serial.println((int)btn.isPressed());
+	if (btn.id >= 8) {
+		sendPot[btn.id-8] = btn.isPressed();
+		return;
+	}
+
+	String msg = String("b " + String(btn.id) + " " + String((int)btn.isPressed()));
+	Serial.println(msg);
 }
 
 void setup()
@@ -34,10 +39,11 @@ void setup()
 
 void writePot(int num, int value)
 {
-	Serial.print("p ");
-	Serial.print(num);
-	Serial.print(" ");
-	Serial.println(value);
+	if (!sendPot[num])
+		return;
+
+	String msg = String("p " + String(num) + " " + String(value));
+	Serial.println(msg);
 }
 
 void loop()
@@ -45,7 +51,5 @@ void loop()
 	for (int i=0; i<btnCount; ++i) {
 		buttons[i].updateState();
 	}
-	writePot(0, analogRead(softPot1));
-	//REMOVE LATER:
-	delay(1);
+	writePot(0, 1023 - analogRead(softPot1));
 }
