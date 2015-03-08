@@ -81,7 +81,7 @@ void loop()
 
 	int newPot1 = analogRead(pot1);
 	if (lastPot1 != newPot1) {
-		writePot(1, (int)((newPot1-500.0)*(1023.0/523.0)));
+		writePot(1, (int)((newPot1-530.0)*(1023.0/493.0)));
 		lastPot1 = newPot1;
 	}
 }

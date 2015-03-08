@@ -12,7 +12,7 @@ function b() //button
 	} else if (buttonNum >= 8) {
 		 
     } else if (pressed) {
-		outlet(3, buttonNum - 1)
+		outlet(3, buttonNum - 3)
 	}
 }
 
@@ -21,7 +21,7 @@ function p() //(soft)pot
 	var args = arrayfromargs(arguments)
 	var potNum = args[0]
 	var valStr = args.slice(1,args.length).join("")
-	var value = Number(valStr) / 1024.0
+	var value = Number(valStr) / 1023.0
 
 	outlet(4 + potNum, value)
 }

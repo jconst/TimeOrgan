@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 537.0, 112.0, 746.0, 602.0 ],
+		"rect" : [ 537.0, 112.0, 710.0, 647.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,18 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 505.0, 248.5, 62.0, 22.0 ],
+					"style" : "",
+					"text" : "s verbmix"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
@@ -116,10 +128,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 467.0, 128.0, 16.0, 87.0 ],
+					"patching_rect" : [ 467.0, 132.0, 16.0, 87.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 251.0, 9.5, 23.0, 125.0 ],
-					"size" : 2.0,
+					"size" : 1.0,
 					"style" : ""
 				}
 
@@ -133,7 +145,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 423.0, 128.0, 16.0, 87.0 ],
+					"patching_rect" : [ 423.0, 132.0, 16.0, 87.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 220.0, 9.5, 23.0, 125.0 ],
 					"size" : 2.0,
@@ -148,7 +160,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 382.0, 128.0, 24.0, 24.0 ],
+					"patching_rect" : [ 382.0, 132.0, 24.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 177.0, 35.0, 36.0, 36.0 ],
 					"style" : ""
@@ -163,7 +175,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 351.5, 160.5, 50.0, 22.0 ],
+					"patching_rect" : [ 351.5, 164.5, 50.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 177.0, 8.0, 36.0, 22.0 ],
 					"style" : ""
@@ -178,7 +190,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 311.75, 149.0, 24.0, 24.0 ],
+					"patching_rect" : [ 311.75, 153.0, 24.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 81.75, 8.0, 37.0, 37.0 ],
 					"style" : ""
@@ -193,7 +205,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 268.5, 149.0, 24.0, 24.0 ],
+					"patching_rect" : [ 268.5, 153.0, 24.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 37.5, 8.0, 37.0, 37.0 ],
 					"style" : ""
@@ -218,7 +230,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 455.0, 277.0, 59.0, 22.0 ],
+					"patching_rect" : [ 431.0, 281.0, 59.0, 22.0 ],
 					"style" : "",
 					"text" : "s startctrl"
 				}
@@ -268,7 +280,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 566.0, 287.0, 55.0, 22.0 ],
+					"patching_rect" : [ 586.0, 287.0, 55.0, 22.0 ],
 					"style" : "",
 					"text" : "s distctrl"
 				}
@@ -436,8 +448,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 6,
-					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 261.5, 90.0, 169.0, 22.0 ],
+					"outlettype" : [ "", "", "", "", "", "float" ],
+					"patching_rect" : [ 261.5, 89.0, 169.0, 22.0 ],
 					"style" : "",
 					"text" : "arduino-buttons"
 				}
@@ -618,6 +630,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -676,15 +697,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-30", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-30", 5 ]
 				}
 
 			}
@@ -841,8 +853,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
