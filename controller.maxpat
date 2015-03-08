@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 537.0, 112.0, 710.0, 647.0 ],
+		"rect" : [ 490.0, 202.0, 710.0, 647.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,87 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 609.0, 110.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 88.5, 52.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 539.125, 164.5, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 58.0, 52.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 573.0, 136.0, 60.0, 22.0 ],
+					"style" : "",
+					"text" : "s switch1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 497.0, 136.0, 60.0, 22.0 ],
+					"style" : "",
+					"text" : "s switch0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 208.0, 133.0, 63.0, 22.0 ],
+					"style" : "",
+					"text" : "s layerbtn"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "led",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 237.0, 182.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 42.0, 8.0, 37.0, 37.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -192,7 +273,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 311.75, 153.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 81.75, 8.0, 37.0, 37.0 ],
+					"presentation_rect" : [ 132.75, 8.0, 37.0, 37.0 ],
 					"style" : ""
 				}
 
@@ -207,7 +288,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 268.5, 153.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 37.5, 8.0, 37.0, 37.0 ],
+					"presentation_rect" : [ 88.5, 8.0, 37.0, 37.0 ],
 					"style" : ""
 				}
 
@@ -447,9 +528,9 @@
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 6,
-					"outlettype" : [ "", "", "", "", "", "float" ],
-					"patching_rect" : [ 261.5, 89.0, 169.0, 22.0 ],
+					"numoutlets" : 8,
+					"outlettype" : [ "", "", "", "", "", "float", "", "" ],
+					"patching_rect" : [ 261.5, 89.0, 301.625, 22.0 ],
 					"style" : "",
 					"text" : "arduino-buttons"
 				}
@@ -684,10 +765,64 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-34", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-30", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-42", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 7 ]
 				}
 
 			}
