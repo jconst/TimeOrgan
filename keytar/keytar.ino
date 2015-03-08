@@ -44,6 +44,11 @@ void didFlipSwitch(Button swch)
 	bool pressed = swch.isPressed();
 	if (swch.id == 0)
 		pressed = !pressed;
+	writeSwitch(swch, pressed);
+}
+
+void writeSwitch(Button swch, bool pressed)
+{
 	String msg = String("s " + String(swch.id) + " " + String((int)pressed));
 	Serial.println(msg);
 }
@@ -57,6 +62,7 @@ void setup()
 	}
 	for (int i=0; i<switchCount; ++i) {
 	    switches[i].setCallback(&didFlipSwitch);
+	    writeSwitch(switches[i], false);
 	}
 }
 
@@ -82,6 +88,7 @@ void loop()
 	int newPot1 = analogRead(pot1);
 	if (lastPot1 != newPot1) {
 		writePot(1, (int)((newPot1-530.0)*(1023.0/493.0)));
+		// writePot(1, newPot1);
 		lastPot1 = newPot1;
 	}
 }
