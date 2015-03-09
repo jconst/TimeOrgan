@@ -43,9 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 106.0, 308.0, 32.0, 22.0 ],
+					"patching_rect" : [ 106.0, 308.0, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "*~ 4"
+					"text" : "*~ 15"
 				}
 
 			}
@@ -213,7 +213,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 414.0, 32.0, 30.0, 30.0 ],
 					"style" : ""
 				}
@@ -369,6 +369,50 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "reverb.maxpat",
+				"bootpath" : "~/Code/Patp1",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "rev3~.maxpat",
+				"bootpath" : "~/Code/Patp1",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "compress.maxpat",
+				"bootpath" : "~/Code/Patp1",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "komp.maxpat",
+				"bootpath" : "/Users/Shared/Max 7/Examples/effects/kompressor/lib",
+				"patcherrelativepath" : "../../../Shared/Max 7/Examples/effects/kompressor/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "komp-ballistics.maxpat",
+				"bootpath" : "/Users/Shared/Max 7/Examples/effects/kompressor/lib",
+				"patcherrelativepath" : "../../../Shared/Max 7/Examples/effects/kompressor/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pitchshift.maxpat",
+				"bootpath" : "~/Code/Patp1",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"embedsnapshot" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
