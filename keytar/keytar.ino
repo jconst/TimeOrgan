@@ -32,7 +32,6 @@ void didPressButton(Button btn)
 {
 	if (btn.id >= 8) {
 		sendPot[btn.id-8] = btn.isPressed();
-		return;
 	}
 
 	String msg = String("b " + String(btn.id) + " " + String((int)btn.isPressed()));

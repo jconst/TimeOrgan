@@ -38,6 +38,33 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 640.0, 113.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 183.0, 79.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 646.0, 154.0, 73.0, 22.0 ],
+					"style" : "",
+					"text" : "s softbutton"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-21",
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
@@ -108,7 +135,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 609.0, 110.0, 24.0, 24.0 ],
+					"patching_rect" : [ 579.0, 148.0, 24.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 88.5, 52.0, 24.0, 24.0 ],
 					"style" : ""
@@ -541,9 +568,9 @@
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 8,
-					"outlettype" : [ "", "", "", "", "", "float", "", "" ],
-					"patching_rect" : [ 261.5, 89.0, 301.625, 22.0 ],
+					"numoutlets" : 9,
+					"outlettype" : [ "", "", "", "", "", "float", "", "", "" ],
+					"patching_rect" : [ 261.5, 88.0, 347.799988, 22.0 ],
 					"style" : "",
 					"text" : "arduino-buttons"
 				}
@@ -805,6 +832,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 8 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -872,6 +908,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}

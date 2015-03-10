@@ -1,5 +1,5 @@
 autowatch = 1
-outlets = 8
+outlets = 9
 
 function b() //button
 {
@@ -9,8 +9,8 @@ function b() //button
 		
 	if (buttonNum < 3) {
 		outlet(buttonNum, pressed)
-	} else if (buttonNum >= 8) {
-		// ignore
+	} else if (buttonNum == 8) {
+		outlet(8, pressed)
     } else if (pressed) {
 		outlet(3, buttonNum - 3)
 	}
@@ -41,6 +41,7 @@ function outletComments(num)
          : num == 1 ? "freeze button"
          : num == 2 ? "store button"
          : num == 3 ? "preset recall buttons"
+		 : num == 9 ? "softpot activator"
          : num <= 5 ? ("softpot " + (num-4) + " value")
 		 : ("switch " + (num-6) + " value"))
 }

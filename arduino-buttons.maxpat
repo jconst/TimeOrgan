@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 506.0, 291.0, 610.0, 419.0 ],
+		"rect" : [ 253.0, 256.0, 640.0, 419.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,13 +38,25 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"comment" : "softpot activator",
+					"id" : "obj-14",
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 596.285706, 261.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 585.25, 260.0, 0.0, 0.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "switch 1",
 					"id" : "obj-13",
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 524.25, 261.0, 30.0, 30.0 ],
-					"presentation_rect" : [ 516.0, 271.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -461,9 +473,9 @@
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 8,
-					"outlettype" : [ "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 20.0, 219.0, 523.25, 22.0 ],
+					"numoutlets" : 9,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 20.0, 219.0, 595.285706, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "parseSerial.js",
 						"parameter_enable" : 0
@@ -605,6 +617,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-3", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-3", 8 ]
 				}
 
 			}

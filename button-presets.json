@@ -5,11 +5,12 @@
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
+					"grainfinder::grainstart" : [ 0.428153 ],
+					"grainfinder::grainsize" : [ 1685 ],
+					"granvolution::graindist" : [ 842 ],
 					"granvolution::tailfx[1]::compress::komp-regular::kompattr" : [ -1 ],
 					"granvolution::tailfx::compress::komp-regular::kompattr" : [ -1 ],
-					"granvolution::graindist" : [ 713 ],
-					"grainfinder::grainstart" : [ 0.041016 ],
-					"grainfinder::grainsize" : [ 618 ]
+					"bufnumtoname::bufnum" : [ 6 ]
 				}
 
 			}
@@ -17,11 +18,12 @@
 			"2" : 			{
 				"id" : 2,
 				"data" : 				{
+					"grainfinder::grainstart" : [ 0.626588 ],
+					"grainfinder::grainsize" : [ 489 ],
+					"granvolution::graindist" : [ 244 ],
 					"granvolution::tailfx[1]::compress::komp-regular::kompattr" : [ -1 ],
 					"granvolution::tailfx::compress::komp-regular::kompattr" : [ -1 ],
-					"granvolution::graindist" : [ 439 ],
-					"grainfinder::grainstart" : [ 0.235672 ],
-					"grainfinder::grainsize" : [ 307 ]
+					"bufnumtoname::bufnum" : [ 8 ]
 				}
 
 			}
