@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 117.0, 86.0, 908.0, 752.0 ],
+		"rect" : [ 48.0, 95.0, 908.0, 752.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -52,6 +52,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 408.0, 82.5, 287.0, 172.0 ],
+					"varname" : "controller",
 					"viewvisibility" : 1
 				}
 
@@ -519,8 +520,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",

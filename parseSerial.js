@@ -1,5 +1,5 @@
 autowatch = 1
-outlets = 9
+outlets = 10
 
 function b() //button
 {
@@ -35,13 +35,24 @@ function s() //switch
 	outlet(6 + switchNum, on)
 }
 
+function r() //rotary encoder
+{
+	var args = arrayfromargs(arguments)
+	var rotNum = args[0]
+	var valStr = args.slice(1,args.length).join("")
+	var value = Number(valStr)
+
+	outlet(9, value)
+}
+
 function outletComments(num)
 {
 	assist(num == 0 ? "layering button?"
          : num == 1 ? "freeze button"
          : num == 2 ? "store button"
          : num == 3 ? "preset recall buttons"
-		 : num == 9 ? "softpot activator"
+		 : num == 8 ? "softpot activator"
+		 : num == 9 ? "rotary encoder direction"
          : num <= 5 ? ("softpot " + (num-4) + " value")
 		 : ("switch " + (num-6) + " value"))
 }
