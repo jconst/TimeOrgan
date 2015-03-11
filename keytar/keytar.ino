@@ -32,14 +32,14 @@ Button switches[switchCount] = {
 
 bool sendPot[2] = {false, false};
 
-int lastPot1 = -10;
+int lastPot1 = -11;
 
 NewhavenLCDSerial lcd(17);
-const int lcdRight = 16;
 String posMsg;
 String sizeMsg;
 String reverbMsg;
 String buttonMsg;
+String cachedMsg;
 bool lcdDirty = false;
 
 void didPressButton(Button btn)
@@ -81,8 +81,6 @@ void setup()
         switches[i].setCallback(&didFlipSwitch);
         writeSwitch(switches[i], false);
     }
-
-    displayMessage("test", 0, false);
 }
 
 void writePot(int num, int value)
@@ -115,9 +113,9 @@ void encoderStep()
     stateB = readingB;
 }
 
-void displayMessage(String msg, int row, bool rightAligned)
+void displayMessage(String msg, int row, int col, bool rightAligned)
 {
-    lcd.setCursor(row, rightAligned ? (lcdRight-msg.length()) : 0);
+    lcd.setCursor(row, rightAligned ? (col-msg.length()) : col);
     for (int i=0; i<msg.length(); i++){
         lcd.write(msg[i]);
     }
@@ -129,10 +127,11 @@ void updateLCD()
         return;
 
     lcd.clear();
-    displayMessage(posMsg, 0, true);
-    displayMessage(sizeMsg, 1, true);
-    displayMessage(reverbMsg, 1, false);
-    displayMessage(buttonMsg, 0, false);
+    displayMessage(posMsg, 0, 16, true);
+    displayMessage(sizeMsg, 1, 16, true);
+    displayMessage(reverbMsg, 1, 0, false);
+    displayMessage(buttonMsg, 0, 0, false);
+    displayMessage(cachedMsg, 0, 5, false);
     lcdDirty = false;
 }
 
@@ -143,15 +142,14 @@ void parseSerial(String msg)
 
     if (msg[0] == 'p') {
         posMsg = msg.substring(2) + String("p");
-    }
-    else if (msg[0] == 's') {
+    } else if (msg[0] == 's') {
         sizeMsg = msg.substring(2) + String("s");
-    }
-    else if (msg[0] == 'r') {
+    } else if (msg[0] == 'r') {
         reverbMsg = String("r") + msg.substring(2);
-    }
-    else if (msg[0] == 'b') {
+    } else if (msg[0] == 'b') {
         buttonMsg = String("b") + msg.substring(2);
+    } else if (msg[0] == 'c') {
+        cachedMsg = String("c") + msg.substring(2);
     }
 }
 
@@ -180,7 +178,7 @@ void loop()
     writePot(0, 1023 - analogRead(pot0));
 
     int newPot1 = analogRead(pot1);
-    if (abs(lastPot1 - newPot1) > 2) {
+    if (abs(lastPot1 - newPot1) > 10) {
         // int scaled = (newPot1-530.0)*(1023.0/493.0);
         int scaled = newPot1;
         writePot(1, scaled);
