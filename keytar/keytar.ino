@@ -1,6 +1,7 @@
 // keytar.ino
 
 #include "Button.h"
+#include "NewhavenLCDSerial.h"
 
 const int rotaryA = 18;
 const int rotaryB = 19;
@@ -31,7 +32,15 @@ Button switches[switchCount] = {
 
 bool sendPot[2] = {false, false};
 
-int lastPot1 = -1;
+int lastPot1 = -10;
+
+NewhavenLCDSerial lcd(17);
+const int lcdRight = 16;
+String posMsg;
+String sizeMsg;
+String reverbMsg;
+String buttonMsg;
+bool lcdDirty = false;
 
 void didPressButton(Button btn)
 {
@@ -72,6 +81,8 @@ void setup()
         switches[i].setCallback(&didFlipSwitch);
         writeSwitch(switches[i], false);
     }
+
+    displayMessage("test", 0, false);
 }
 
 void writePot(int num, int value)
@@ -102,7 +113,61 @@ void encoderStep()
     }
     stateA = readingA;   //update state to current reading
     stateB = readingB;
-} 
+}
+
+void displayMessage(String msg, int row, bool rightAligned)
+{
+    lcd.setCursor(row, rightAligned ? (lcdRight-msg.length()) : 0);
+    for (int i=0; i<msg.length(); i++){
+        lcd.write(msg[i]);
+    }
+}
+
+void updateLCD()
+{
+    if (!lcdDirty)
+        return;
+
+    lcd.clear();
+    displayMessage(posMsg, 0, true);
+    displayMessage(sizeMsg, 1, true);
+    displayMessage(reverbMsg, 1, false);
+    displayMessage(buttonMsg, 0, false);
+    lcdDirty = false;
+}
+
+void parseSerial(String msg)
+{
+    if (msg.length() == 0)
+        return;
+
+    if (msg[0] == 'p') {
+        posMsg = msg.substring(2) + String("p");
+    }
+    else if (msg[0] == 's') {
+        sizeMsg = msg.substring(2) + String("s");
+    }
+    else if (msg[0] == 'r') {
+        reverbMsg = String("r") + msg.substring(2);
+    }
+    else if (msg[0] == 'b') {
+        buttonMsg = String("b") + msg.substring(2);
+    }
+}
+
+void lcdStep()
+{
+    //for loop to avoid staying in this fn for too long
+    for (int i=0; i<10 && Serial.available(); ++i) {
+        char msg[30] = {0};
+        if (!Serial.readBytesUntil('\n', msg, 29)) {
+            break;
+        }
+        lcdDirty = true;
+        parseSerial(String(msg));
+    }
+    updateLCD();
+}
 
 void loop()
 {
@@ -115,11 +180,13 @@ void loop()
     writePot(0, 1023 - analogRead(pot0));
 
     int newPot1 = analogRead(pot1);
-    if (lastPot1 != newPot1) {
-        writePot(1, (int)((newPot1-530.0)*(1023.0/493.0)));
-        // writePot(1, newPot1);
+    if (abs(lastPot1 - newPot1) > 2) {
+        // int scaled = (newPot1-530.0)*(1023.0/493.0);
+        int scaled = newPot1;
+        writePot(1, scaled);
         lastPot1 = newPot1;
     }
 
     encoderStep();
+    lcdStep();
 }

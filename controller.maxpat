@@ -38,6 +38,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 336.0, 456.0, 77.0, 22.0 ],
+					"style" : "",
+					"text" : "s buttonnum"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-51",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
@@ -83,7 +95,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 770.0, 375.0, 97.0, 22.0 ],
-					"restore" : [ 0.500283 ],
+					"restore" : [ 0.5 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
@@ -356,7 +368,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 351.5, 164.5, 50.0, 22.0 ],
+					"patching_rect" : [ 349.5, 164.5, 50.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 177.0, 8.0, 36.0, 22.0 ],
 					"style" : ""
@@ -1047,6 +1059,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1073,6 +1094,13 @@
 			}
 , 			{
 				"name" : "parseSerial.js",
+				"bootpath" : "~/Code/Patp1",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "toSerial.js",
 				"bootpath" : "~/Code/Patp1",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",

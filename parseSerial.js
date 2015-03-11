@@ -23,7 +23,9 @@ function p() //(soft)pot
 	var valStr = args.slice(1,args.length).join("")
 	var value = Number(valStr) / 1023.0
 
-	outlet(4 + potNum, value)
+	if (!isNaN(value)) {
+		outlet(4 + potNum, value)
+	}
 }
 
 function s() //switch

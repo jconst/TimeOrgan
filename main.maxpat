@@ -455,6 +455,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "toSerial.js",
+				"bootpath" : "~/Code/Patp1",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "freezer.maxpat",
 				"bootpath" : "~/Code/Patp1",
 				"patcherrelativepath" : ".",
