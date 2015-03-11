@@ -4,17 +4,8 @@
 
 const int rotaryA = 18;
 const int rotaryB = 19;
-
-int encoderPos = 0;     // encoder position
-int lastPos = 0;        // keep track of last position   
 int stateA=LOW;
 int stateB=LOW;
-
-void setup() { 
-    Serial.begin (57600);
-    pinMode(rotaryA, INPUT_PULLUP); //set encoder pins to inputs with pullups
-    pinMode(rotaryB, INPUT_PULLUP); 
-} 
 
 const int pot0 = 0;
 const int pot1 = 2; //using 100k pot w/ 100k voltage divider
@@ -70,6 +61,10 @@ void setup()
 {
     Serial.begin(57600);
     delay(1000);
+
+    pinMode(rotaryA, INPUT_PULLUP); //set encoder pins to inputs with pullups
+    pinMode(rotaryB, INPUT_PULLUP); 
+
     for (int i=0; i<btnCount; ++i) {
         buttons[i].setCallback(&didPressButton);
     }
@@ -91,7 +86,8 @@ void writePot(int num, int value)
 void writeRotary(int num, bool cw)
 {
     int dir = cw ? 1 : -1;
-    String msg = String("r " + String(num) + " " + String(dir))
+    String msg = String("r " + String(num) + " " + String(dir));
+    Serial.println(msg);
 }
 
 void encoderStep()

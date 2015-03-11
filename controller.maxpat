@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 681.0, 383.0, 69.0, 22.0 ],
 					"style" : "",
-					"text" : "clip 0.08 1."
+					"text" : "clip 0.12 1."
 				}
 
 			}
@@ -83,7 +83,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 770.0, 375.0, 97.0, 22.0 ],
-					"restore" : [ 0.5 ],
+					"restore" : [ 0.500283 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
