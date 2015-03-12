@@ -83,7 +83,7 @@
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 594.0, 498.0, 53.0, 22.0 ],
 					"style" : "",
-					"text" : "sig~ 0.7"
+					"text" : "sig~ 0.6"
 				}
 
 			}
