@@ -179,8 +179,8 @@ void loop()
 
     int newPot1 = analogRead(pot1);
     if (abs(lastPot1 - newPot1) > 10) {
-        // int scaled = (newPot1-530.0)*(1023.0/493.0);
-        int scaled = newPot1;
+        int scaled = (newPot1-530.0)*(1023.0/493.0);
+        // int scaled = newPot1;
         writePot(1, scaled);
         lastPot1 = newPot1;
     }
